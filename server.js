@@ -63,6 +63,12 @@ app.get('/:articleName', function (req, res) {
   res.send(createTemplate(articles[articleName]));
 });   
 
+//counter endpoint
+var counter=0;
+app.get('/counter',function(req,res){
+    counter++;
+    res.send(counter.toString());
+});
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
