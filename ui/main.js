@@ -18,7 +18,17 @@ image.onclick=function(){
 var button=document.getElementById('counter');
 var counter=0;
 button.onclick=function(){
-    counter++;
-    var span=document.getElementById('count');
-    span.innerHTML=counter.toString();
+    var request=new XMLHttpRequest();
+    request.onreadystatchange= function(){
+        if(request.readyState==XMLHttpRequest.DONE){
+            if(request.status==200){
+                counter++;
+                var span=document.getElementById('count');
+                span.innerHTML=counter.toString(); 
+            }
+        }
+    };
+    request.open('GET','http://nijoj.imad.hasura-app.io/counter',true);
+    request.send(null);
+    
 };
