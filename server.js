@@ -58,18 +58,18 @@ var htmlTemplate=`
     </html>`;
     return htmlTemplate;
 }
-//name submit\
-var names=[];
-app.get('/submit_name',function(req,res){
-    var names=req.query.name;
-    names.push(name);
-    res.send(JSON.stringify(names));
-});
 //counter endpoint
 var counter=0;
 app.get('/counter',function(req,res){
     counter++;
     res.send(counter.toString());
+});
+//names submit
+var names=[];
+app.get('/submit_name',function(req,res){
+    var name=req.query.name;
+    names.push(name);
+    res.send(JSON.stringify(names));
 });
 app.get('/:articleName', function (req, res) {
     var articleName=req.params.articleName;
