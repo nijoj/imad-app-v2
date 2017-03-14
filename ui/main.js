@@ -51,6 +51,6 @@ submit.onclick=function(){
 };
 var nameInput=document.getElementById('name');
 var name=nameInput.value;
-request.open('GET','/submit_name?name=',name,true);
+request.open('GET','/submit_name?name='+name,true);
 request.send(null);
 };
