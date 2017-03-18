@@ -75,7 +75,7 @@ function hash(input,salt){
 app.get('/hash/:input',function(req,res){
     var hashedString=hash(req.params.input,'salt');
     res.send(hashedString);
-})
+});
 
 //database
 var pool = new Pool(config);
