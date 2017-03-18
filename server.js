@@ -13,7 +13,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles={
+/*var articles={
      'pageone':{
         title:'My page 1',
         heading:'page one',
@@ -33,7 +33,7 @@ var articles={
         date:'19-02-2017',
         content:`<p>This is my content for page three.This is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page one</p>
             <p>This is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page oneThis is my content for page one</p>`}
-}
+}*/ //Deleted and taken from database
 function createTemplate(data){
     var heading=data.heading;
     var date=data.date;
