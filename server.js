@@ -7,7 +7,7 @@ var config = {
   user: 'nijoj',
   database: 'nijoj',
   port:'5432',
-  password:'db-nijoj-88077'
+  password:process.env.DB_PASSWORD
 };
 
 var app = express();
