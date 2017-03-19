@@ -54,3 +54,26 @@ var name=nameInput.value;
 request.open('GET','/submit_name?name='+name,true);
 request.send(null);
 };
+//login
+var submit1=document.getElementById('submit_btn1');
+submit1.onclick=function(){
+    var request=new XMLHttpRequest();
+    request.onreadystatechange= function(){
+        if(request.readyState===XMLHttpRequest.DONE){
+            if(request.status===200){
+                alert('logged in successfully'); 
+            }
+            else if(request.status===403){
+                alert('username/password incorrect');
+            }
+            else if(request.state===500){
+                alert('Someting went wrong on server');
+            }
+    }
+};
+var username=document.getElementById('username').value;
+var password=document.getElementById('password').value;
+request.open('POST','/login',true);
+request.setRequestHeader('Content-Type','application/json');
+request.send(JSON.stringify({username:username,password:password}));
+};
